@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import * as Tone from "tone";
 import SolfeggioBox from "./components/SolfeggioBox/SolfeggioBox";
 import React from "react";
+import ChakraBox from "./components/ChakraBox/ChakraBox";
+import PNOsc from "components/PNOsc/PNOsc";
 
 function App() {
   const [visibleComponents, setVisibleComponents] = useState([]);
@@ -39,12 +41,13 @@ function App() {
             Solfeggio Box
           </label>
           <label>
-            <input type="checkbox" id="anotherBox" />
-            Another Box
+            <input type="checkbox" id="chakraBox" />
+            Chakra Box
           </label>
         </div>
       </div>
       {visibleComponents.includes("solfeggioBox") && <SolfeggioBox />}
+      {visibleComponents.includes("chakraBox") && <ChakraBox />}
     </div>
   );
 }
